@@ -14,6 +14,7 @@ flowchart LR
   DBX --> LOCAL[pyspark-local-tutorials]
   EST[Mixed legacy estate] -->|lineage-migration-planner| GRAPH[lineage graph + migration plan]
   GRAPH -. informs .-> DBX
+  DBX --> LAKE[banking-lakehouse-reference]
 ```
 
 ## The repos
@@ -25,6 +26,7 @@ flowchart LR
 | [informatica2databricks-demo](https://github.com/memo8212/informatica2databricks-demo) | Informatica PowerCenter | mappings, sessions, worklets, mapplets, workflow, params, SCD2 | `infa2dbx` (CLI app) | ✅ | ✅ |
 | [elasticsearch2databricks-demo](https://github.com/memo8212/elasticsearch2databricks-demo) | Elasticsearch | indices, ingest pipelines, query DSL, dashboards; file registry/lineage/sharing | `converter/es2dbx_converter.py` | ✅ | ✅ |
 | [lineage-migration-planner](https://github.com/memo8212/lineage-migration-planner) | any (mixed estate) | links all components into a lineage graph + predicts the migration plan | `lineageplanner` (scan) | ✅ | ✅ |
+| [banking-lakehouse-reference](https://github.com/memo8212/banking-lakehouse-reference) | — (target) | production bank lakehouse: medallion, contracts, PII governance, reconciliation | `lakehouse` (`python -m lakehouse run`) | ✅ | ✅ |
 | [harbor-databricks-tutorials](https://github.com/memo8212/harbor-databricks-tutorials) | — (learning) | Databricks basics: Spark, SQL, Delta, UC, Workflows, Lakeflow, monitoring, finance/ML | 14 notebooks + DAB | ☁️ Databricks | — |
 | [pyspark-local-tutorials](https://github.com/memo8212/pyspark-local-tutorials) | — (learning) | PySpark: DataFrames, SQL, Delta, MLlib, streaming, tuning, testing | 18 runnable scripts | ✅ | ✅ |
 
