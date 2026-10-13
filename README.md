@@ -18,7 +18,7 @@ flowchart LR
 
 | Repo | Source system | Migrates | Converter / app | Runs locally | Tests |
 |---|---|---|---|---|---|
-| [sas2databricks-demo](https://github.com/memo8212/sas2databricks-demo) | SAS / SAS DI Studio | DI job → workflow, PROC SQL/DATA step, medallion, risk engine | `converter/sas2dbx_converter.py` | ✅ | ✅ |
+| [sas2databricks-poc](https://github.com/memo8212/sas2databricks-poc) | SAS / SAS DI Studio | DI job → workflow, PROC SQL/DATA step, medallion, risk engine | `converter/sas2dbx_converter.py` | ✅ | ✅ |
 | [mainframe2databricks-demo](https://github.com/memo8212/mainframe2databricks-demo) | Mainframe | JCL, COBOL, VSAM KSDS, DB2, CICS; EBCDIC/COMP-3 | `mftranspile` (COBOL→PySpark app) | ✅ | ✅ |
 | [informatica2databricks-demo](https://github.com/memo8212/informatica2databricks-demo) | Informatica PowerCenter | mappings, sessions, worklets, mapplets, workflow, params, SCD2 | `infa2dbx` (CLI app) | ✅ | ✅ |
 | [elasticsearch2databricks-demo](https://github.com/memo8212/elasticsearch2databricks-demo) | Elasticsearch | indices, ingest pipelines, query DSL, dashboards; file registry/lineage/sharing | `converter/es2dbx_converter.py` | ✅ | ✅ |
