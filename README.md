@@ -12,6 +12,8 @@ flowchart LR
   ES[Elasticsearch] -->|elasticsearch2databricks| DBX
   DBX --> TUT[harbor-databricks-tutorials]
   DBX --> LOCAL[pyspark-local-tutorials]
+  EST[Mixed legacy estate] -->|lineage-migration-planner| GRAPH[lineage graph + migration plan]
+  GRAPH -. informs .-> DBX
 ```
 
 ## The repos
@@ -22,6 +24,7 @@ flowchart LR
 | [mainframe2databricks-demo](https://github.com/memo8212/mainframe2databricks-demo) | Mainframe | JCL, COBOL, VSAM KSDS, DB2, CICS; EBCDIC/COMP-3 | `mftranspile` (COBOL→PySpark app) | ✅ | ✅ |
 | [informatica2databricks-demo](https://github.com/memo8212/informatica2databricks-demo) | Informatica PowerCenter | mappings, sessions, worklets, mapplets, workflow, params, SCD2 | `infa2dbx` (CLI app) | ✅ | ✅ |
 | [elasticsearch2databricks-demo](https://github.com/memo8212/elasticsearch2databricks-demo) | Elasticsearch | indices, ingest pipelines, query DSL, dashboards; file registry/lineage/sharing | `converter/es2dbx_converter.py` | ✅ | ✅ |
+| [lineage-migration-planner](https://github.com/memo8212/lineage-migration-planner) | any (mixed estate) | links all components into a lineage graph + predicts the migration plan | `lineageplanner` (scan) | ✅ | ✅ |
 | [harbor-databricks-tutorials](https://github.com/memo8212/harbor-databricks-tutorials) | — (learning) | Databricks basics: Spark, SQL, Delta, UC, Workflows, Lakeflow, monitoring, finance/ML | 14 notebooks + DAB | ☁️ Databricks | — |
 | [pyspark-local-tutorials](https://github.com/memo8212/pyspark-local-tutorials) | — (learning) | PySpark: DataFrames, SQL, Delta, MLlib, streaming, tuning, testing | 18 runnable scripts | ✅ | ✅ |
 
